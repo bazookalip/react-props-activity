@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+.Header {
+  background: rgb(214, 213, 213);
+  border: 1px solid rgb(139, 136, 136);
+  height: 100px;
+}
+
+.EnterNumber {
+  text-align: center;
+  margin: 20px;
+}
+
+
+button {
+  background-color: rgb(135, 137, 138); /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+   border-radius: 10px;
+}
+
+input {
+  background-color: rgb(230, 236, 238); /* Green */
+  border: none;
+  color: rgb(80, 78, 78);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.Keypad {
+  text-align: center;
+  margin: 30px;
+  padding: 20px;
+  background: lightgray;
+  height: 100px;
+}
+
+.CurrentTotal {
+  text-align: center;
+  background: lightgrey;
+  margin: 70px;
+  padding: 20px;
+  border: 1px solid grey;
+
+}
+
+.History {
+  text-align: center;
+  background: rgb(228, 225, 225);
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 20px;
+  border: 1px solid grey;
+
+}
