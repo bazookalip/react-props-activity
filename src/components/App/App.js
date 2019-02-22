@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import './App.css';
@@ -7,7 +6,7 @@ class App extends Component {
   state = {
     numberInput: '',
     currentTotal: 0,
-    numberList: [],
+    historyList: [],
   }
 
 
@@ -21,36 +20,25 @@ class App extends Component {
   handleClickUp = () => {
     console.log('up button has been clicked');
     this.setState({
-      currentTotal: this.state.currentTotal + Number(this.state.numberInput),
+      currentTotal: Number(this.state.numberInput) + this.state.currentTotal,
+      numberInput: '',
     })
-    // console.log(event);
-
-    // this.setState({
-    //   newStar: {
-    //     name: '',
-    //     diameter: '',
-    //   },
-    //   starList: [...this.state.starList, this.state.newStar],
-    // });
   }
 
   handleClickDown = () => {
     console.log('down button has been clicked');
     this.setState({
-      currentTotal: this.state.currentTotal - Number(this.state.numberInput),
+      currentTotal: Number(this.state.numberInput) - this.state.currentTotal,
+      numberInput: '',
     })
-    // console.log(event);
-
-    // this.setState({
-    //   newStar: {
-    //     name: '',
-    //     diameter: '',
-    //   },
-    //   starList: [...this.state.starList, this.state.newStar],
-    // });
   }
 
-
+  handleClickSave = () => {
+    console.log('down button has been clicked');
+    this.setState({
+      historyList: [...this.state.historyList, this.state.currentTotal],
+    })
+  }
 
 
   render() {
@@ -72,6 +60,12 @@ class App extends Component {
           <button onClick={this.handleClickSave}>Save</button>
         </div>
         <p>Click save above to save the current total in the history</p>
+
+
+        <h2>History</h2>
+        <div>
+          <ul>{this.state.historyList.map(historyItem => <li key={historyItem}>{historyItem}</li>)}</ul>
+        </div>
 
       </div>
     );
