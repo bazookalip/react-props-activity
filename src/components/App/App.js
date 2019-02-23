@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import './App.css';
+import CurrentTotal from '../CurrentTotal/CurrentTotal';
+import History from '../History/History'
+import EnterNumber from '../EnterNumber/EnterNumber';
+
 
 class App extends Component {
   state = {
@@ -43,31 +47,18 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Header />
-        <button onClick={this.handleClickUp}>Up</button>
-        <input
-          type="number"
-          placeholder="Enter Number"
-          onChange={this.handleChange}
-          value={this.state.numberInput}
+        <EnterNumber 
+        numberInput={this.state.numberInput}
+          handleChange={this.handleChange}
+          handleClickUp={this.handleClickUp}
+          handleClickDown={this.handleClickDown}
         />
-        <button onClick={this.handleClickDown}>Down</button>
-        <div>
-          {this.state.currentTotal}
-        </div>
-        <div>
-          <button onClick={this.handleClickSave}>Save</button>
-        </div>
-        <p>Click save above to save the current total in the history</p>
-
-
-        <h2>History</h2>
-        <div>
-          <ul>{this.state.historyList.map(historyItem => <li key={historyItem}>{historyItem}</li>)}</ul>
-        </div>
-
-      </div>
+        <CurrentTotal currenTotal={this.state.currentTotal} />
+        <History historyList={this.state.historyList}/>
+      </>
+  
     );
   }
 }

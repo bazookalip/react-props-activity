@@ -12,9 +12,15 @@ class EnterNumber extends Component {
 
             <div className="Keypad">
             
-            <button>Up</button>
-            <input placeholder="Enter Number"/>
-            <button>Down</button>
+            <button onClick={this.props.handleClickUp}>Up</button>
+  
+                    <input
+                        type="number"
+                        placeholder="Enter Number"
+                        onChange={this.props.handleChange}
+                        value={this.props.numberInput}
+                    />
+            <button onClick={this.props.handleClickDown}>Down</button>
 
                     
             </div>
