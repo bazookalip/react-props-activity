@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   handleClickSave = () => {
-    console.log('down button has been clicked');
+    console.log('save button has been clicked');
     this.setState({
       historyList: [...this.state.historyList, this.state.currentTotal],
     })
@@ -50,12 +50,15 @@ class App extends Component {
       <>
         <Header />
         <EnterNumber 
-        numberInput={this.state.numberInput}
+          numberInput={this.state.numberInput}
           handleChange={this.handleChange}
           handleClickUp={this.handleClickUp}
           handleClickDown={this.handleClickDown}
         />
-        <CurrentTotal currenTotal={this.state.currentTotal} />
+        <CurrentTotal 
+          currenTotal={this.state.currentTotal} 
+          handleClickSave={this.handleClickSave}
+          />
         <History historyList={this.state.historyList}/>
       </>
   
